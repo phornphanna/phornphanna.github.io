@@ -1,0 +1,857 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@300&family=Fira+Sans+Extra+Condensed:wght@300&family=Josefin+Sans:ital,wght@0,600;1,500&family=Koulen&family=Patrick+Hand&family=Poppins:wght@400;600;900&family=Rowdies:wght@300&family=Ysabeau:wght@700&display=swap');
+:root {
+    --font-menu-kh : 'Battambang', cursive;
+    --font-menu-en : font-family: 'Ysabeau', sans-serif;
+    --font-content : 'Poppins', sans-serif;
+    --bg-menu :  #1da1f2;
+    --color-border-bottom : #6F00FF; 
+    --size-btn : 10px 26px;
+    --color-footer : rgb(74, 74, 74);
+    --font-btn : 'Fira Sans Extra Condensed', sans-serif;
+    --size-1 :  1280px;
+    --size-2 : 1024px;
+    --size-3 : 912px;
+    --size-4 : 820px;
+    --size-5 : 768px;
+    --size-6 : 540px;
+    --size-7 : 412px;
+    --size-8 : 390px;
+    --size-9 : 375px;
+    --size-10 : 280px;
+    --color-rate : #ffbf00;
+}
+*::after , *::before{
+    margin: 0;
+    padding: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul {
+    list-style-type: none;
+} a {
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    font-family: var(--font-content);
+    font-family: 16px;
+    background: var(--bg-menu);
+    /* animation : bg 2s infinite alternate; */
+    transition: all 4s;
+}
+/*  end of style default for apply  */
+/* @keyframes bg {
+    from {
+       background:   var(--color-bg) ;
+       background-size:300%;   
+
+   } to {
+       background:   var(--color-bg) ;
+               background-size: 100%;
+
+           }
+} */
+/*  start media screen 1280 header */
+.header {
+  max-width: 100%;
+  color: whitesmoke;
+  background: black;
+  box-shadow: 0px 1.5px 6px 2px rgba(0, 0, 0, 0.774);
+  backdrop-filter:(20px);
+  -webkit-backdrop-filter: (20px);
+  margin-bottom: 20px;
+}
+.header > .header_list {
+    max-width: var(--size-1);
+   display: flex;
+   align-items: center;
+   padding: 0px 40px;
+   justify-content: space-between;
+   cursor: pointer;
+
+}
+/* ed of style header with navigation */
+/*  start style logo */
+.header > .header_list > .logo{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.header > .header_list > .logo > img{
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       object-position: center;
+}
+/*  end of style logo */
+/*  style icon bar */
+.icon_bar {
+    display: none;
+    font-size: 40px;
+   
+}
+
+/* end of icon bar */
+/*  start style of menu */
+
+.header > .header_list > .navigation > .menu {
+    display: flex;
+    gap: 18px;
+}
+.header > .header_list > .navigation > .menu > li{
+    padding: 6px 0px;
+}
+
+.header > .header_list >.navigation > .menu > li:first-child.list_active{
+    border-bottom: 2px solid var(--color-border-bottom);
+} 
+.header > .header_list > .navigation > .menu > li > a{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: var(--font-menu-en);
+}
+
+.header > .header_list > .navigation > .menu > li:last-child{
+    display: none;
+}
+.header > .header_list > .navigation > .menu > li > a:hover  {
+    color: var(--color-border-bottom);
+}
+/* end of style navigation menu */
+/*  start style of class menu right  */
+ .header > .header_list > .menu_right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+ }
+ .header > .header_list > .menu_right > li {
+    font-size: 14px;
+    text-transform: uppercase;
+ } 
+ .header > .header_list >  .menu_right > li:first-child > i{
+    font-size: 14px;
+ } 
+ .header > .header_list > .menu_right > li:last-child {
+    border: 0.5px solid white;
+    padding: 3px 7px;
+ }
+/* end of meadia screen 1280px */
+
+/*  start emdia screen 1023px */
+@media  screen and (max-width : 1023px){
+    .header > .header_list {
+        max-width: var(--size-2);
+        padding: 0;
+        padding: 0px 20px;
+    }
+    .header > .header_list > .navigation > .menu {
+        gap: 10px;
+    }
+    .header > .header_list > .navigation > .menu > li > a{
+        font-size: 16px;
+    }
+}
+/*  end of screen 1023px */
+/*  start  screen media 768px*/
+@media screen and (max-width : 768px){
+    .header > .header_list {
+        max-width: var(--size-5);
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .header > .header_list > .icon_bar {
+        display: flex;
+    }
+    .header > .header_list > .navigation {
+        /* display: none; */
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-left: 20px;
+        height: 100vh;
+        transform: translateX(-100%);
+        cursor: pointer;
+        z-index: 2000;
+    }
+    .header > .header_list >  .navigation > .closing::after{
+        content: "\292B";
+        color: black;
+        font-size: 60px;
+        position: absolute;
+        right: 20px;
+        top : -20px;
+    }
+    .header > .header_list > .navigation > .menu {
+        max-width: 100%;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header > .header_list > .navigation > .menu > li:last-child{
+        display: block;
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+        border: none;
+    }
+    .header > .header_list > .navigation > .menu > li > a{
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+  
+    }
+    .header > .header_list > .menu_right {
+        display: none;
+    }
+    .header > .header_list > .navigation.active_menu{
+        transform : translateX(0%);       
+         transition : all 1.2s;
+    }
+}
+
+/*  end of media screen 768px at header */
+/*  start style header media screen 375px */
+@media screen and (max-width : 375px){
+    .header > .header_list {
+        padding: 0;
+        padding: 0px 10px;
+    }
+    .header > .header_list > .logo {
+        width: 80px;
+        height: 80px;
+    }
+    .header > .header_list > .icon_bar  {
+     font-size: 24px;
+    }
+}
+ /* end of media screen 375px */
+ /*  start make style of class search for show popup search when user click icon search  */
+ .box_search {
+     width: var(--size-1);
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+    align-items: start;
+    display: none;
+    cursor: pointer;
+    z-index: 10000;
+ }
+ .box_search  > .sub_search{
+    max-width: var(--size-2);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding : 20px 10px;
+ }
+ .box_search > .sub_search >  input{
+    padding: 20px 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    height: 40px;
+    border: 2px solid rgb(0, 0, 0);
+ }
+ .box_search > .sub_search > input:focus{
+   outline: none;
+   border: 2px solid var(--color-border-bottom);
+ }
+ .box_search > .sub_search > .closing {
+    font-size: 50px;
+    color: black;
+}
+ /*  end of class sub_search */
+ .box_search >  .search_list {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 20px;
+ }
+.box_search >  .search_list > .popular_link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ }
+.box_search  > .search_list  > .popular_link > li {
+    padding: 14px 0px;
+    text-transform: uppercase;
+ }
+ .box_search.search_active{
+    display: flex;
+ }
+ /*  end of style popular link for show when search  */
+ /*  start make style slider  */
+ .slider{
+    margin-bottom: 20px;
+ }
+.slider  > .container {
+    position: relative;
+    background-color: green;
+    max-width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: -2000;
+    border-radius: 10px;
+}
+.slider > .container > img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+@keyframes nextOut{
+    from {
+        left : 0;
+    } to{
+        left : -100%;
+    }
+  }
+  @keyframes nextIn{
+    from {
+        left : 100%;
+    } to{
+        left : 0%;
+    }
+  }
+  @keyframes backOut{
+    from {
+        left: 0%;
+    }
+    to {
+        left: 100%;
+    }
+  }
+  @keyframes backIn{
+    from{
+        left: -100%;
+    } to {
+        left: 0%;
+    }
+  }
+
+  .slider > .container > img:not(.active){
+      left : -100%;
+  }
+  .box_icon{
+    position:absolute;
+    top: 32%;
+    width: 100%;
+  }
+   .box_icon > button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    font-family: var(--font-content);
+    backdrop-filter : blur(50px);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: grey ;
+   }
+  .box_icon > button:hover{
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 30px rgb(196 , 196 , 196);
+    background-color: rgba(255 , 255 , 255 ,0.8);
+  }
+  .next{
+    position: absolute;
+    z-index: 100;
+    left: 25px;
+  }
+  .back{
+    position: absolute;
+    z-index: 100;
+    right: 25px;
+  }
+  .box_dot{
+    position: absolute;
+    top:  56%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    padding: 5px 10px;
+    gap: 12px;
+  }
+  .dot{
+    width: 60px;
+    height: 5px;
+     cursor: pointer;
+     background-color: rgba( 255 , 255 , 255, 0.3);
+     transition: all 0.2s ease-out;
+    }
+.dot.active{
+    background-color: rgb(255, 255, 255);
+}
+
+
+ @media screen and (max-width : 768px){
+    .box_dot {
+     top: 58%;
+    }.box_icon {
+     top: 32%;
+    }.box_icon > .next {
+     left: 10px;
+    }.box_icon > .back {
+     right: 10px;
+    }
+}
+/*  end of screen 768px */
+/*  start style slider screen 540px */
+@media screen and (max-width : 540px){
+     .box_icon {
+        top: 32%;
+      } .box_icon .next {
+        left: 2px;
+      }.box_icon .back {
+        right: 2px;
+      }
+}
+
+ @media screen and (max-width : 390px){
+      .box_dot{
+        top:58%;
+      }.box_dot > .dot {
+        width: 26px;
+      }
+      .box_icon {
+        top: 30%;
+      }
+ }
+ /*  end fo screen 390px */
+/*  start make style of adverties */
+.container {
+    max-width: var(--size-2);
+    margin: auto;
+    display: flex;
+}
+.adv {
+   width: 20%;
+    margin-top: 50px;
+}
+.adv > a {
+    width: 100%;
+    height: 200px;
+}
+.container > .adv > a:nth-child(odd) > img{
+    animation: adv_odd 2s infinite  alternate;
+}
+.container > .adv > a:nth-child(even) > img {
+    animation: adv_even 2s infinite  alternate;
+}
+@keyframes adv_odd {
+    from{
+           transform: scale(100%);
+        } to{
+            transform: scale(80%);
+        }
+  }
+  @keyframes adv_even {
+    from{
+           transform: scale(80%);
+        } to{
+            transform: scale(100%);
+        }
+  }
+  .adv > a > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+/* end of adverties ================= */
+/* container box use for control both button box and card  */
+.container > .container_box{
+    width: 79%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+    /* margin-left: 1%; */
+    background-color: transparent;
+    margin-bottom: 80px;
+}
+/* end of container box ============= */
+/* start of box btn of cotegory  */
+ .container_box > .box_btn {
+    max-width: 100%;
+    display: flex;
+    justify-content:start;
+}
+.container_box >  .box_btn > .btn{
+    padding: var(--size-btn);
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+}
+.container_box > .box_btn > .btn.active{
+    border-bottom: 3.5px solid var(--color-border-bottom);
+}
+/* end of btn box  ========*/
+/* start box card  use for control both slide and number step=============  */
+.container_box > .box_card {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: start;
+}
+/*  end of box card */
+/*  start of card ============= */
+.container_box > .box_card > .card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3%;
+    justify-content: start;
+    margin-top: 10px;
+}
+.container_box > .box_card > .card >.sub_card {
+    width: 24.7%;
+    height:300px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+/*  end of style of card and sub card  */
+/*  start of style card hover  */
+.container_box > .box_card > .card > .sub_card > .card_hover {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.207);
+    width: 100%;
+    height: 80%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 8px;
+    padding-top: 8px;
+    transform: translateY(-100%);
+    transition: all 0.8s;
+}
+.container_box > .box_card > .card > .sub_card:hover .card_hover{
+    transform: translateY(0%);
+    background: rgb(0, 0, 0);
+}
+.sub_card > .card_hover > .play{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.6px solid white;
+    border-radius: 50%;
+}
+.sub_card > .card_hover > .play > i{
+    font-size: 26px;
+}
+.sub_card  p {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.sub_card > .card_hover > .star {
+    color: var(--color-rate);
+}
+.sub_card > .card_hover > a > button{
+    padding: 3px 13px;
+    font-size: 13px;
+    font-family: var(--font-content);
+    margin-top: 8px;
+    background-color: var(--color-border-bottom);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: white;
+}
+
+/* end of card hover  */
+/*  start base card ========= */
+  .container_box > .box_card > .card > .sub_card > .card_base{
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+  .sub_card > .card_base > img {
+    width: 100%;
+    height: 80%;
+  }
+/* end of base card  */
+/* make start stye of box counter  */
+  .box_counter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: red;
+}
+
+.box_counter > .box {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.box_counter > .box.test{
+    background-color: yellow;
+}
+/* ================================= */
+/*  make style responsive screen media 768px */
+@media screen and (max-width : 768px){
+    .container {
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .container > .adv {
+        width: 100%;
+        display: flex;
+    }
+    .container > .container_box {
+        /* background-color: yellow; */
+        width: 100%;
+    } 
+    .container > .container_box > .box_card > .card >.sub_card {
+        width: 33%;
+    }
+    .container_box > .box_btn > .btn{
+        font-size: 12px;
+    }
+} 
+/*  make responsive screen 512px */
+@media screen and (max-width : 540px){
+    .container{
+        margin-left: 0;
+        padding-left: 0;
+    } .container > .container_box {
+        margin-left: 0;
+        padding-left: 0;
+    } .container > .container_box > .box_card {
+        margin-left: 0;
+        padding-left: 0;
+    }.container > .container_box > .box_card  > .card {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .container > .container_box > .box_card > .card >.sub_card {
+        width: 45%;
+        margin-left: 8px;
+    }
+  .container_box >  .box_btn > .btn {
+        padding: 0;
+        margin: 0;
+        padding: 6px 10px;
+    }
+  }
+  /*  end fo respon sive  */
+  /*  style team work  */
+.title {
+    font-size: 30px;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    font-family: var(--font-menu-kh);
+    animation: title 1.2s infinite forwards linear;
+}
+@keyframes title {
+    0%{
+        color: rgb(255, 255, 255);
+    } 25%{
+        color: rgb(11, 255, 11);
+    } 50%{
+        color: rgb(176, 0, 0);
+    } 75%{
+        color:rgb(72, 79, 255) ;
+    } 100%{
+        color: yellow ;
+    }
+}
+
+
+.box_team {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 140px;
+  }
+  .box_team > .next_step , .come_back{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 45%;
+  }
+  .box_team > .team{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: auto;
+    max-width: 360px;
+    height: 360px;
+  }
+  .box_team > .team > .member_card{
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     background: rgba(0, 0, 0, 0.301);
+       align-items: center;
+       border-radius: 5px;
+       border: 1px solid white;
+       animation: test 2s infinite forwards linear;
+  }
+  @keyframes test {
+  0%{
+        border-top: 1.5px solid white;
+        transition: all 1s ease-in-out;
+  }50%{
+        border-right: 1.5px solid rgb(176, 0, 0);
+        transition: all 1s ease-in-out;
+  } 75%{
+        border-bottom: 1.5px solid rgb(72, 79, 255);
+        transition: all 1.4s ease-in-out;
+  } 100%{
+        border-left: 1.5px solid yellow;
+        transition: all 1.4s ease-in-out;
+  }
+}
+  .box_team > .team > .member_card > img{
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+    position: absolute;
+    top: -100px;
+    border-radius: 50%;
+    animation: test1 2s infinite forwards linear;
+    object-position: center;
+  }
+  @keyframes test1 {
+  0%{
+        border-top: 3px solid white;
+        transition: all 1s ease-in-out;
+        box-shadow: 0px 0px  8px 6px white;
+  }50%{
+        border-right: 3px solid rgb(176, 0, 0);
+        transition: all 1s ease-in-out;
+        box-shadow: 0px 0px  8px 6px rgb(176, 0, 0);
+  } 75%{
+        border-bottom: 3px solid rgb(72, 79, 255);
+        transition: all 1.4s ease-in-out;
+        box-shadow: 0px 0px  8px 6px rgb(72, 79 ,255);
+  } 100%{
+        border-left: 3px solid yellow;
+        transition: all 1.4s ease-in-out;
+        box-shadow: 0px 0px  8px 6px yellow;
+  }
+}
+  .box_team > .team > .member_card > .info_personal {
+      width: 100%;
+      height: 150px;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      gap: 10px;
+  }
+  .box_team > .team > .member_card > .info_personal > p{
+   color: rgb(255, 255, 255);
+   letter-spacing: 1.5px;
+   width: 100%;
+   text-transform: capitalize;
+  }
+  .box_team .next_step {
+  position: absolute;
+  left: 20px;
+}
+.box_team .come_back {
+  right:20px;
+}
+.member_card > .image:nth-child(3){
+   object-position: top;
+}
+  /*  end of make style member box */
+  .footer {
+    width: 100%;
+    display: flex;
+    font-family: var(--font-menu-kh);
+    background: rgb(0, 0, 0);
+    color: white;
+    align-items: start;
+    justify-content: space-evenly;
+    padding: 20px 0px;
+  }
+  /* end of footer class */
+  .footer >.sub_footer_left {
+    font-family: var(--font-content);
+    display: flex;
+    gap: 80px;
+  }
+  .footer > .sub_footer_left  >  ul > li {
+       font-size: 16px;
+       text-transform: uppercase;
+  }
+  .footer > .sub_footer_left  >  ul > li:first-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  /* endd of style sub footer class */
+  .footer > .sub_footer_right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.footer > .sub_footer_right > .owner::before{
+    content: "\00A9";
+    font-weight: normal;
+    margin-right: 4px;
+    font-family: var(--font-content);
+    font-size: 30px;
+}
+  .footer > .sub_footer_right>.icon_social{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+  }.footer > .sub_footer_right>  .icon_social > i{
+    font-size: 28px;
+  }
+  /*  make meadia screen 768px for footer  */
+  @media screen and (max-width : 767px){
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0px;
+        padding-left: 4px;
+    }.footer > .sub_footer_right > h2{
+         display: flex;
+         justify-content: center;
+    }
+    .footer > .sub_footer_right > .icon_social{
+        justify-content: center;
+    }
+  }

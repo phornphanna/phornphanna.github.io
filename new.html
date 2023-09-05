@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angkor Film</title>
+    <link rel="icon" type="image/x-icon" href="photo/logo_popup.png">
+    <script src="https://kit.fontawesome.com/aad838cc5a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+           @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@300&family=Fira+Sans+Extra+Condensed:wght@300&family=Josefin+Sans:ital,wght@0,600;1,500&family=Koulen&family=Patrick+Hand&family=Poppins:wght@400;600;900&family=Rowdies:wght@300&family=Ysabeau:wght@700&display=swap');
+      :root {
+    --font-menu-kh : 'Battambang', cursive;
+    --font-menu-en : font-family: 'Ysabeau', sans-serif;
+    --font-content : 'Poppins', sans-serif;
+    --bg-menu :  #1da1f2;
+    --color-border-bottom : #6F00FF; 
+    --size-btn : 10px 26px;
+      }
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+       *::before , *::after {
+        margin: 0;
+        padding: 0;
+       }
+      .menu-3-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+      } .menu-3-box > .menu-3-box-btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+
+      } .menu-3-box > .menu-3-box-btn > div{
+         font-size: 20px;
+         padding: 10px 0px;
+         text-transform: uppercase;
+         cursor: pointer;
+
+        }
+      .menu-3-box > .menu-3-box-btn > div.active{
+        border-bottom: 4px solid var(--color-border-bottom);
+        color: var(--color-border-bottom);
+      }
+      .menu-3-box > .menu-3-box-promotion {
+        width: 80%;
+        margin : 20px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3%;
+      }
+      .menu-3-box > .menu-3-box-promotion > .card-promotion {
+        width: 33%;
+        height:360px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: url(photo/new_activity1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      .menu-3-box > .menu-3-box-promotion > .card-promotion > span::after{
+        margin-left: 10px;
+       content: "\1F4C5 19 Sep 2022";
+        font-size: 18px;
+        position: absolute;
+        bottom: 10px;
+        word-spacing: 2px;
+      }
+      @media screen and (max-width : 767px){
+        .menu-3-box > .menu-3-box-btn   > div{
+          gap: 4;
+          font-size: 15px;
+        }  .menu-3-box > .menu-3-box-promotion > .card-promotion {
+          width: 48.5%;
+        }
+        .menu-3-box > .menu-3-box-promotion  > .card-promotion > p:nth-child(2){
+         font-size: 18px;
+        }.menu-3-box > .menu-3-box-promotion  > .card-promotion > p:last-child {
+          font-size: 15px;
+        }
+      }
+      @media screen and (max-width : 540px){
+        .menu-3-box > .menu-3-box-btn > div {
+          gap: 2;
+          font-size: 12px;
+        } .menu-3-box > .menu-3-box-promotion {
+          gap: 3%;
+        }
+        .menu-3-box > .menu-3-box-promotion > .card-promotion {
+          width: 100%;
+          gap: 6px;
+        }
+      }
+    </style>
+</head>
+<body>
+            <!-- make menu bar  -->
+            <header class="header ">
+                <!-- class list make control and set width  -->
+                    <nav class="header_list">
+                      <!-- class logo use for inout logo -->
+                   <div class="logo">
+                     <img src="photo/logo (2).png" alt="">
+                   </div>
+                   <!-- end of class logo -->
+                   <!-- icon bar use for how bar menu when media screen responsive on screen 768px -->
+                   <span class="icon_bar">&#9778;</span>
+                   <!-- end of icon bar -->
+                    <div class="navigation">
+                      <!-- navigation bar use show when popup  -->
+                      <span class="closing"></span>
+                      <!-- class closing use for add content in css use after add entity code sign wronge   -->
+                        <!-- use for control menu option  -->
+                      <ul class="menu">
+                           <li><a href="index.html">MOIVES</a></li>
+                           <li><a href="cinema.html" >cinema</a></li>
+                           <li><a href="promotion.html" >promotion</a></li>
+                           <li><a href="new.html" >new & activity</a></li>
+                           <li><a href="contact.html">contacts us</a></li>
+                           <li><i class="fa-solid fa-magnifying-glass search"></i></li>
+                        </ul>
+                        <!-- end of class menu -->
+                    </div>
+                    <!--  end of class navigation  -->
+                    <!--  start menu right for make btn search and change menu english to khmer  -->
+                    <ul class="menu_right">
+                      <li class="search_icon"><i class="fa-solid fa-magnifying-glass search"></i></li>
+                      <li>en</li>
+                    </ul>
+                    <!--  end of class menu right -->
+                  </nav>
+                  <!--  end of menu  class header list -->
+               </header>
+               <!--  end of tag header -->
+               <!--  start make popup search  -->
+              <section class="box_search">
+                <!--  use class search make bg popup  -->
+                <!--  boxsearch use in parent search class for control header of search -->
+                <div class="sub_search">
+                   <input type="text" name="text" placeholder="search" class="search">
+                  <span class="closing">&#x292C;</span>
+                </div>
+                     <!-- start search list use for show list that user want to find  -->
+                <div class="search_list">
+                  </div>
+                  <!--  end of class box search -->
+                 <!--  end of  class search list  -->
+              </section>
+              <!-- end  of class search  -->
+             <section class="menu-3-box">
+                     <div class="menu-3-box-btn">
+                      <div data-id="all" class="active">All New</div>
+                      <div data-id="off">Corporate New</div>
+                      <div data-id="on">group booking new</div>
+                     </div>
+                     <div class="menu-3-box-promotion">
+                         <div class="card-promotion">
+                              <span></span>
+                         </div>
+                     </div>
+             </section>
+
+
+
+
+    <!-- ​​​ start make footer ======================== -->
+    <footer class="footer">
+        <div class="sub_footer_left">
+          <ul>
+            <li>movie</li>
+            <li>Now Showing</li>
+            <li>Coming Soon</li>
+            <li>Cinemas</li>
+            <li>News & Activity</li>
+       </ul>
+       <ul>
+            <li>System Type</li>
+            <li>Kids</li>
+            <li>4dx</li>
+            <li>imax</li>
+            <li>screen x</li>
+       </ul>
+        </div>
+        <div class="sub_footer_right">
+          <h2 class="owner">រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ Angkor Film</h2>
+          <span class="icon_social">
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-telegram"></i></a>
+          </span>
+        </div>
+     </footer>
+<!--  end of footer  -->
+</body>
+<script src="app.js"></script>
+<script>
+      let proAllBtn = document.querySelectorAll(".menu-3-box-btn > div");
+      let proBoxBtn = document.querySelector(".menu-3-box-btn");
+      proBoxBtn.addEventListener("click" , (btn)=>{
+        let checkTarget = btn.target.dataset.id;
+          proAllBtn.forEach(function(e){
+            console.log(checkTarget)
+            if(checkTarget){
+              e.classList.remove("active");
+            }
+            btn.target.classList.add("active");
+          });
+      });
+   
+      var arrayNewActivity = [
+       {
+           'img' : 'photo/new_activity1.png' ,
+           'day' : '27 , Sep , 2023'
+      },
+    ];
+     let boxPromotionCard = document.querySelector(".menu-3-box-promotion");
+
+      
+      proAllBtn.forEach((btn)=>{
+        btn.addEventListener("click", function(e){
+         let checkFilter = e.target.dataset.id;
+         let filterArrayPromotionCard = arrayPromotionCard.filter((p)=>{
+         return  p.category === checkFilter;
+         });
+         funAllCardPromotion(filterArrayPromotionCard);
+         if(checkFilter == "all"){
+          funAllCardPromotion(arrayPromotionCard);
+         }
+        });
+      });
+      function funAllCardPromotion (item){
+      let newArrayPromotionCard =item.map((e)=>{
+         return `
+         <div class="card-promotion">
+                            <img src="${e.img}" alt="">
+                            <p>${e.event}</p>
+                            <p>${e.expire}</p>
+              </div>
+         `;
+      }).join('');
+      boxPromotionCard.innerHTML = newArrayPromotionCard;
+     }
+     window.addEventListener("DOMContentLoaded", ()=>{
+           funAllCardPromotion(arrayPromotionCard);
+     });
+</script>
+</html>
